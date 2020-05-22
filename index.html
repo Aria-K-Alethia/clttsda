@@ -5,9 +5,348 @@
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" media="screen" href="index.css" />
-	<title>Audio Sample</title>
+	<title>Audio Samples of the paper "Cross-lingual TTS synthesis via Domain Adaptation and Perceptual Similarity Regression in Speaker Space"</title>
 </head>
 <body>
-	<h1>This is a test line</h1>
+    <article>
+      <header>
+        <h1>Audio Samples of the paper "Cross-lingual TTS synthesis via Domain Adaptation and Perceptual Similarity Regression in Speaker Space"</h1>
+      </header>
+    </article>
+
+    <!-- <p><b>Paper:</b> <a href="https://arxiv.org/abs/1907.04448">arXiv</a></p> -->
+
+    <p><b>Authors</b>: Detai Xin, Yuki Saito, Shinnosuke Takamichi, Tomoki Koriyama, and Hiroshi Saruwatari</p>
+
+    <!-- <div><b>Abstract:</b>
+        <br> We present a multispeaker, multilingual text-to-speech (TTS) synthesis model based on Tacotron that is able to produce high quality speech in multiple languages.
+Moreover, the model is  able to transfer voices across languages, i.e. synthesize fluent Spanish speech using an English speaker's voice, without training on any bilingual or parallel examples.
+Such transfer works across distantly related languages, e.g. English and Mandarin.<br><br>
+
+Critical to achieving this result are: 1. using a phonemic input representation to encourage sharing of model capacity across languages, and 2. incorporating an adversarial loss term to encourage the model to disentangle its representation of speaker identity (which is perfectly correlated with language in the training data) from the speech content.
+Further scaling up the model by training on multiple speakers of each language, and incorporating an autoencoding input to help stabilize attention during training, results in a model which can be used to consistently synthesize intelligible speech for training speakers in all languages seen during training, and in native or foreign accents
+    </div> 
+
+    <p><a href="https://google.github.io/tacotron/index.html">Click here for more from the Tacotron team.</a></p> 
+
+    &nbsp;-->
+
+    <div>
+    	<b>Note:</b>
+    	<span style="background-color: #FFFF00">In order to obtain best quality, we strongly encourage the listeners to take their headphones.</span>
+    </div>
+
+    <p class="toc_title">Contents</p>
+    <div id="toc_container">
+    <ul>
+      <li><a href="https://aria-k-alethia.github.io/clttsda/#intra_lingual">Intra-lingual TTS synthesis</a></li>
+      <li><a href="https://aria-k-alethia.github.io/clttsda/#cross_lingual">Cross-lingual TTS synthesis</a></li>
+      <li><a href="https://aria-k-alethia.github.io/clttsda/#speaker_similarity">The nearest cross-lingual pair</a></li>
+    </ul>
+    </div>
+
+    <p>&nbsp;</p>
+      <div>
+        We use JSUT and LJS as pretraining dataset. VCTK and JVS are used for training. The training dataset includes 107 seen speaker. We also randomly picked 4 Japanese and 4 English speakers as unseen speaker.
+	<br><br>
+	All of the utterances below are not included in training data.
+      </div>
+ 
+		<!-- Section 4.1 -->
+		<div>
+      <a name="intra_lingual"><h2>Intra-lingual TTS synthesis</h2></a>
+     
+      <a name="multi_tts.sample"><h3>English</h3></a>
+      <div class="text_gst">Text: He is hungry for success and I am the same.</div>
+      <!--Text: The plenty around me, the ease and independence, gave me a delightful sense of comfort.</h4>-->
+      <table>
+        <tbody>
+        <tr>
+			<td nowrap=""></td>
+			<td align="center">Ground Truth</td>
+			<td align="center">Conv.</td>
+			<td align="center">Conv.+sim</td>
+			<td align="center">DA</td>
+			<td align="center">DA+sim</td>
+        </tr> 
+        <tr>
+          <td nowrap="">p228<br>(seen)&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td><audio controls=""><source src="audio/intra/raw/p228_01.wav"></audio></td>
+          <td><audio controls=""><source src="audio/intra/conv/p228_01.wav"></audio></td>
+          <td><audio controls=""><source src="audio/intra/conv+sim/p228_01.wav"></audio></td>
+          <td><audio controls=""><source src="audio/intra/da/p228_01.wav"></audio></td>
+          <td><audio controls=""><source src="audio/intra/da+sim/p228_01.wav"></audio></td>
+        </tr>
+       </tbody>
+      </table>
+      <div class="text_gst">Text: Some have accepted it as a miracle without physical explanation.</div>
+      <!--Text: The plenty around me, the ease and independence, gave me a delightful sense of comfort.</h4>-->
+      <table>
+        <tbody>
+        <tr>
+          <td nowrap="">p293<br>(seen)&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td><audio controls=""><source src="audio/intra/raw/p293_14.wav"></audio></td>
+          <td><audio controls=""><source src="audio/intra/conv/p293_14.wav"></audio></td>
+          <td><audio controls=""><source src="audio/intra/conv+sim/p293_14.wav"></audio></td>
+          <td><audio controls=""><source src="audio/intra/da/p293_14.wav"></audio></td>
+          <td><audio controls=""><source src="audio/intra/da+sim/p293_14.wav"></audio></td>
+        </tr>
+       </tbody>
+      </table>
+      <div class="text_gst">Text: To the Hebrews it was a token that there would be no more universal floods.</div>
+      <!--Text: The plenty around me, the ease and independence, gave me a delightful sense of comfort.</h4>-->
+      <table>
+        <tbody>
+        <tr>
+          <td nowrap="">p265<br>(unseen)</td>
+          <td><audio controls=""><source src="audio/intra/raw/p265_05.wav"></audio></td>
+          <td><audio controls=""><source src="audio/intra/conv/p265_05.wav"></audio></td>
+          <td><audio controls=""><source src="audio/intra/conv+sim/p265_05.wav"></audio></td>
+          <td><audio controls=""><source src="audio/intra/da/p265_05.wav"></audio></td>
+          <td><audio controls=""><source src="audio/intra/da+sim/p265_05.wav"></audio></td>
+        </tr>
+       </tbody>
+      </table>
+      <div class="text_gst">Text: That will bring about a dramatic improvement.</div>
+      <!--Text: The plenty around me, the ease and independence, gave me a delightful sense of comfort.</h4>-->
+      <table>
+        <tbody>
+        <tr>
+          <td nowrap="">p303<br>(unseen)</td>
+          <td><audio controls=""><source src="audio/intra/raw/p303_01.wav"></audio></td>
+          <td><audio controls=""><source src="audio/intra/conv/p303_01.wav"></audio></td>
+          <td><audio controls=""><source src="audio/intra/conv+sim/p303_01.wav"></audio></td>
+          <td><audio controls=""><source src="audio/intra/da/p303_01.wav"></audio></td>
+          <td><audio controls=""><source src="audio/intra/da+sim/p303_01.wav"></audio></td>
+        </tr>
+       </tbody>
+      </table>
+      <a name="multi_tts.sample"><h3>Japanese</h3></a>
+      <div class="text_gst">Text: ハーデースが、ペルセポネーに恋をしたのは、アプロディーテーの、策略であるとされている。</div>
+      <!--Text: The plenty around me, the ease and independence, gave me a delightful sense of comfort.</h4>-->
+      <table>
+        <tbody>
+        <tr>
+			<td nowrap=""></td>
+			<td align="center">Ground Truth</td>
+			<td align="center">Conv.</td>
+			<td align="center">Conv.+sim</td>
+			<td align="center">DA</td>
+			<td align="center">DA+sim</td>
+        </tr>
+        <tr>
+          <td nowrap="">jvs024<br>(seen)&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td><audio controls=""><source src="audio/intra/raw/jvs024_07.wav"></audio></td>
+          <td><audio controls=""><source src="audio/intra/conv/jvs024_07.wav"></audio></td>
+          <td><audio controls=""><source src="audio/intra/conv+sim/jvs024_07.wav"></audio></td>
+          <td><audio controls=""><source src="audio/intra/da/jvs024_07.wav"></audio></td>
+          <td><audio controls=""><source src="audio/intra/da+sim/jvs024_07.wav"></audio></td>
+        </tr>
+       </tbody>
+      </table>
+      <div class="text_gst">Text: 大西洋上の、巡航高度から、動力なしで、地上へ滑空飛行し、緊急着陸に成功した。</div>
+      <!--Text: The plenty around me, the ease and independence, gave me a delightful sense of comfort.</h4>-->
+      <table>
+        <tbody>
+        <tr>
+          <td nowrap="">jvs066<br>(seen)&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td><audio controls=""><source src="audio/intra/raw/jvs066_10.wav"></audio></td>
+          <td><audio controls=""><source src="audio/intra/conv/jvs066_10.wav"></audio></td>
+          <td><audio controls=""><source src="audio/intra/conv+sim/jvs066_10.wav"></audio></td>
+          <td><audio controls=""><source src="audio/intra/da/jvs066_10.wav"></audio></td>
+          <td><audio controls=""><source src="audio/intra/da+sim/jvs066_10.wav"></audio></td>
+        </tr>
+       </tbody>
+      </table>
+      <div class="text_gst">Text: 楽曲のセンターポジションは、エーケービーフォーティーエイトの、高橋みなみが務めた。</div>
+      <!--Text: The plenty around me, the ease and independence, gave me a delightful sense of comfort.</h4>-->
+      <table>
+        <tbody>
+        <tr>
+          <td nowrap="">jvs014<br>(unseen)</td>
+          <td><audio controls=""><source src="audio/intra/raw/jvs014_01.wav"></audio></td>
+          <td><audio controls=""><source src="audio/intra/conv/jvs014_01.wav"></audio></td>
+          <td><audio controls=""><source src="audio/intra/conv+sim/jvs014_01.wav"></audio></td>
+          <td><audio controls=""><source src="audio/intra/da/jvs014_01.wav"></audio></td>
+          <td><audio controls=""><source src="audio/intra/da+sim/jvs014_01.wav"></audio></td>
+        </tr>
+       </tbody>
+      </table>
+      <div class="text_gst">Text: ジャガーとは対照的に、ボディービルダーを髣髴とさせる、マッチョな体育会系の外見が特徴。</div>
+      <!--Text: The plenty around me, the ease and independence, gave me a delightful sense of comfort.</h4>-->
+      <table>
+        <tbody>
+        <tr>
+          <td nowrap="">jvs084<br>(unseen)</td>
+          <td><audio controls=""><source src="audio/intra/raw/jvs084_12.wav"></audio></td>
+          <td><audio controls=""><source src="audio/intra/conv/jvs084_12.wav"></audio></td>
+          <td><audio controls=""><source src="audio/intra/conv+sim/jvs084_12.wav"></audio></td>
+          <td><audio controls=""><source src="audio/intra/da/jvs084_12.wav"></audio></td>
+          <td><audio controls=""><source src="audio/intra/da+sim/jvs084_12.wav"></audio></td>
+        </tr>
+       </tbody>
+      </table>
+
+      <a name="cross_lingual"><h2>Cross-lingual TTS synthesis</h2></a>
+      <a name="multi_tts.sample"><h3>Japanese speaker, English speech</h3></a>
+      <div class="text_gst">Text: This time, it might be for real.</div>
+      <table>
+        <tbody>
+        <tr>
+			<td nowrap=""></td>
+			<td align="center">Reference</td>
+			<td align="center">Conv.</td>
+			<td align="center">Conv.+sim</td>
+			<td align="center">DA</td>
+			<td align="center">DA+sim</td>
+        </tr> 
+        <tr>
+          <td nowrap="">jvs017<br>(seen)&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td><audio controls=""><source src="audio/cross/raw/jvs017_08.wav"></audio></td>
+          <td><audio controls=""><source src="audio/cross/conv/jvs017_08.wav"></audio></td>
+          <td><audio controls=""><source src="audio/cross/conv+sim/jvs017_08.wav"></audio></td>
+          <td><audio controls=""><source src="audio/cross/da/jvs017_08.wav"></audio></td>
+          <td><audio controls=""><source src="audio/cross/da+sim/jvs017_08.wav"></audio></td>
+        </tr>
+       </tbody>
+      </table>
+      <div class="text_gst">Text: We have no influence on the Government's policy on the euro</div>
+      <table>
+        <tbody>
+        <tr>
+          <td nowrap="">jvs066<br>(seen)&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td><audio controls=""><source src="audio/cross/raw/jvs066_08.wav"></audio></td>
+          <td><audio controls=""><source src="audio/cross/conv/jvs066_08.wav"></audio></td>
+          <td><audio controls=""><source src="audio/cross/conv+sim/jvs066_08.wav"></audio></td>
+          <td><audio controls=""><source src="audio/cross/da/jvs066_08.wav"></audio></td>
+          <td><audio controls=""><source src="audio/cross/da+sim/jvs066_08.wav"></audio></td>
+        </tr>
+       </tbody>
+      </table>
+	  <div class="text_gst">Text: These options include the possible merger or sale of the company.</div>
+      <!--Text: The plenty around me, the ease and independence, gave me a delightful sense of comfort.</h4>-->
+      <table>
+        <tbody>
+        <tr>
+          <td nowrap="">jvs036<br>(unseen)</td>
+          <td><audio controls=""><source src="audio/cross/raw/jvs036_01.wav"></audio></td>
+          <td><audio controls=""><source src="audio/cross/conv/jvs036_01.wav"></audio></td>
+          <td><audio controls=""><source src="audio/cross/conv+sim/jvs036_01.wav"></audio></td>
+          <td><audio controls=""><source src="audio/cross/da/jvs036_01.wav"></audio></td>
+          <td><audio controls=""><source src="audio/cross/da+sim/jvs036_01.wav"></audio></td>
+        </tr>
+       </tbody>
+      </table>
+      <div class="text_gst">Text: Obviously, someone is not doing their job properly.</div>
+      <!--Text: The plenty around me, the ease and independence, gave me a delightful sense of comfort.</h4>-->
+      <table>
+        <tbody>
+        <tr>
+          <td nowrap="">jvs084<br>(unseen)</td>
+          <td><audio controls=""><source src="audio/cross/raw/jvs084_07.wav"></audio></td>
+          <td><audio controls=""><source src="audio/cross/conv/jvs084_07.wav"></audio></td>
+          <td><audio controls=""><source src="audio/cross/conv+sim/jvs084_07.wav"></audio></td>
+          <td><audio controls=""><source src="audio/cross/da/jvs084_07.wav"></audio></td>
+          <td><audio controls=""><source src="audio/cross/da+sim/jvs084_07.wav"></audio></td>
+        </tr>
+       </tbody>
+      </table>
+
+      <a name="multi_tts.sample"><h3>English speaker, Japanese speech</h3></a>
+      <div class="text_gst">Text: 少年時代は、ロシア帝国、チェルニーヒウ県、プルィルークィ郡、トロスチャヌィーツャ村で過ごした。</div>
+      <table>
+        <tbody>
+        <tr>
+			<td nowrap=""></td>
+			<td align="center">Reference</td>
+			<td align="center">Conv.</td>
+			<td align="center">Conv.+sim</td>
+			<td align="center">DA</td>
+			<td align="center">DA+sim</td>
+        </tr> 
+        <tr>
+          <td nowrap="">p228<br>(seen)&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td><audio controls=""><source src="audio/cross/raw/p228_01.wav"></audio></td>
+          <td><audio controls=""><source src="audio/cross/conv/p228_01.wav"></audio></td>
+          <td><audio controls=""><source src="audio/cross/conv+sim/p228_01.wav"></audio></td>
+          <td><audio controls=""><source src="audio/cross/da/p228_01.wav"></audio></td>
+          <td><audio controls=""><source src="audio/cross/da+sim/p228_01.wav"></audio></td>
+        </tr>
+       </tbody>
+      </table>
+      <div class="text_gst">Text: そして、インデペンデント紙の、読者投票で選ぶ、プレミアリーグ最優秀ゴールキーパーに選ばれた。</div>
+      <table>
+        <tbody>
+        <tr>
+          <td nowrap="">p238<br>(seen)&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td><audio controls=""><source src="audio/cross/raw/p238_01.wav"></audio></td>
+          <td><audio controls=""><source src="audio/cross/conv/p238_01.wav"></audio></td>
+          <td><audio controls=""><source src="audio/cross/conv+sim/p238_01.wav"></audio></td>
+          <td><audio controls=""><source src="audio/cross/da/p238_01.wav"></audio></td>
+          <td><audio controls=""><source src="audio/cross/da+sim/p238_01.wav"></audio></td>
+        </tr>
+       </tbody>
+      </table>
+	  <div class="text_gst">Text: シャンチーの専業プロは、チームから支払われる給料と、対局費を、主な収入としている。</div>
+      <!--Text: The plenty around me, the ease and independence, gave me a delightful sense of comfort.</h4>-->
+      <table>
+        <tbody>
+        <tr>
+          <td nowrap="">p265<br>(unseen)</td>
+          <td><audio controls=""><source src="audio/cross/raw/p265_06.wav"></audio></td>
+          <td><audio controls=""><source src="audio/cross/conv/p265_06.wav"></audio></td>
+          <td><audio controls=""><source src="audio/cross/conv+sim/p265_06.wav"></audio></td>
+          <td><audio controls=""><source src="audio/cross/da/p265_06.wav"></audio></td>
+          <td><audio controls=""><source src="audio/cross/da+sim/p265_06.wav"></audio></td>
+        </tr>
+       </tbody>
+      </table>
+      <div class="text_gst">Text: デッドキーは、タイプライターや、コンピュータのキーボードにおける、特殊な装飾キーである。</div>
+      <!--Text: The plenty around me, the ease and independence, gave me a delightful sense of comfort.</h4>-->
+      <table>
+        <tbody>
+        <tr>
+          <td nowrap="">p339<br>(unseen)</td>
+          <td><audio controls=""><source src="audio/cross/raw/p339_20.wav"></audio></td>
+          <td><audio controls=""><source src="audio/cross/conv/p339_20.wav"></audio></td>
+          <td><audio controls=""><source src="audio/cross/conv+sim/p339_20.wav"></audio></td>
+          <td><audio controls=""><source src="audio/cross/da/p339_20.wav"></audio></td>
+          <td><audio controls=""><source src="audio/cross/da+sim/p339_20.wav"></audio></td>
+        </tr>
+       </tbody>
+      </table>
+
+      <a name="speaker_similarity"><h2>The nearest cross-lingual speaker pair</h2></a>
+      <table>
+        <tbody>
+        <tr>
+			<td align="center">Target speaker</td>
+			<td align="center">Conv.</td>
+			<td align="center">DA</td>
+			<td align="center">DA+sim</td>
+        </tr> 
+        <tr>
+          <td nowrap=""><div align="center"><span>p231</span></div><br><audio controls=""><source src="audio/sim/raw/p231_01.wav"></audio></td>
+          <td><div align="center"><span>jvs058</span></div><br><audio controls=""><source src="audio/sim/conv/jvs058_01.wav"></audio></td>
+          <td><div align="center"><span">jvs090</span></div><br><audio controls=""><source src="audio/sim/da/jvs090_01.wav"></audio></td>
+          <td><div align="center"><span>jvs029</span></div><br><audio controls=""><source src="audio/sim/da+sim/jvs029_01.wav"></div></audio></td>
+        </tr>
+        <tr>
+          <td nowrap=""><div align="center"><span>p277</span></div><br><audio controls=""><source src="audio/sim/raw/p277_02.wav"></audio></td>
+          <td><div align="center"><span>jvs090</span></div><br><audio controls=""><source src="audio/sim/conv/jvs090_02.wav"></audio></td>
+          <td><div align="center"><span">jvs061</span></div><br><audio controls=""><source src="audio/sim/da/jvs061_02.wav"></audio></td>
+          <td><div align="center"><span>jvs043</span></div><br><audio controls=""><source src="audio/sim/da+sim/jvs043_02.wav"></div></audio></td>
+        </tr>
+        <tr>
+          <td nowrap=""><div align="center"><span>p303</span></div><br><audio controls=""><source src="audio/sim/raw/p303_03.wav"></audio></td>
+          <td><div align="center"><span>jvs015</span></div><br><audio controls=""><source src="audio/sim/conv/jvs015_03.wav"></audio></td>
+          <td><div align="center"><span">jvs038</span></div><br><audio controls=""><source src="audio/sim/da/jvs038_03.wav"></audio></td>
+          <td><div align="center"><span>jvs053</span></div><br><audio controls=""><source src="audio/sim/da+sim/jvs053_03.wav"></div></audio></td>
+        </tr>
+       </tbody>
+      </table>
+      <p>&nbsp;</p>
+    </div>
+
 </body>
 </html>
